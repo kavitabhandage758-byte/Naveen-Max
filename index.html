@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -88,6 +88,34 @@
         .border-blue-500, .border-blue-600 { border-color: var(--primary) !important; }
         .bg-blue-600\/20 { background-color: rgba(0, 210, 255, 0.2) !important; }
         .bg-blue-600\/10 { background-color: rgba(0, 210, 255, 0.1) !important; }
+
+        .why-point:hover {
+            color: var(--primary);
+            transform: translateX(10px);
+        }
+        .why-point {
+            transition: all 0.3s ease;
+        }
+        .img-container {
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 210, 255, 0.1);
+        }
+        .img-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+        }
+        .social-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: var(--primary);
+        }
     </style>
 </head>
 <body>
@@ -104,6 +132,7 @@
         <div class="hidden md:flex gap-8 font-semibold text-sm tracking-wide">
             <a href="#home" class="hover:text-blue-500 transition text-gray-300">HOME</a>
             <a href="#programs" class="hover:text-blue-500 transition text-gray-300">PROGRAMS</a>
+            <a href="#why-choose" class="hover:text-blue-500 transition text-gray-300">EXPERT</a>
             <a href="#bmi" class="hover:text-blue-500 transition text-gray-300">BMI</a>
             <a href="#pricing" class="hover:text-blue-500 transition text-gray-300">PRICING</a>
             <a href="#transformations" class="hover:text-blue-500 transition text-gray-300">SUCCESS</a>
@@ -112,6 +141,7 @@
         <a href="#trial" class="btn-primary px-6 py-2 rounded-full font-bold text-sm">FREE TRIAL</a>
     </nav>
 
+    <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10"></div>
@@ -136,6 +166,7 @@
         </div>
     </section>
 
+    <!-- Stats Bar -->
     <section class="bg-blue-600 py-10 relative z-30">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-black">
             <div>
@@ -157,14 +188,13 @@
         </div>
     </section>
 
-    <!-- Programs Section Updated with requested categories -->
+    <!-- Programs Section -->
     <section id="programs" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Elite <span class="text-blue-600">Programs</span></h2>
             <p class="text-gray-400">Comprehensive training modules for every ambitious athlete.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Cardio -->
             <div class="program-card bg-zinc-900 rounded-2xl overflow-hidden group border border-zinc-800" data-aos="zoom-in">
                 <div class="h-56 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500" alt="Cardio">
@@ -172,10 +202,8 @@
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2">Cardio</h3>
                     <p class="text-gray-400 text-sm mb-4">Boost your endurance and heart health with premium treadmills and cycles.</p>
-                    <a href="#trial" class="text-blue-500 font-bold flex items-center gap-2 group-hover:gap-4 transition-all">ENROLL NOW <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <!-- HIIT -->
             <div class="program-card bg-zinc-900 rounded-2xl overflow-hidden group border border-zinc-800" data-aos="zoom-in" data-aos-delay="100">
                 <div class="h-56 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500" alt="HIIT">
@@ -183,21 +211,17 @@
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2">HIIT</h3>
                     <p class="text-gray-400 text-sm mb-4">High-intensity intervals for maximum calorie burn in minimal time.</p>
-                    <a href="#trial" class="text-blue-500 font-bold flex items-center gap-2 group-hover:gap-4 transition-all">ENROLL NOW <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <!-- STRENGTH -->
             <div class="program-card bg-zinc-900 rounded-2xl overflow-hidden group border border-zinc-800" data-aos="zoom-in" data-aos-delay="200">
                 <div class="h-56 overflow-hidden">
-                    <img src="Screenshot_20260406-203023-1.jpg" class="w-full h-full object-cover transition duration-500" alt="Strength" onerror="this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2ec617?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="Screenshot_20260406-203023-1.jpg" class="w-full h-full object-cover transition duration-500" alt="Strength">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2">Strength</h3>
                     <p class="text-gray-400 text-sm mb-4">Focus on powerlifting, compound movements, and heavy lifting.</p>
-                    <a href="#trial" class="text-blue-500 font-bold flex items-center gap-2 group-hover:gap-4 transition-all">ENROLL NOW <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <!-- CROSSFIT -->
             <div class="program-card bg-zinc-900 rounded-2xl overflow-hidden group border border-zinc-800" data-aos="zoom-in" data-aos-delay="300">
                 <div class="h-56 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500" alt="CrossFit">
@@ -205,45 +229,78 @@
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-2">CrossFit</h3>
                     <p class="text-gray-400 text-sm mb-4">Functional movements performed at high intensity for total body utility.</p>
-                    <a href="#trial" class="text-blue-500 font-bold flex items-center gap-2 group-hover:gap-4 transition-all">ENROLL NOW <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <!-- AEROBIC -->
-            <div class="program-card bg-zinc-900 rounded-2xl overflow-hidden group border border-zinc-800" data-aos="zoom-in">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1518611012118-2969c63d002e?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500" alt="Aerobic">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Aerobic</h3>
-                    <p class="text-gray-400 text-sm mb-4">Dynamic rhythm-based workouts for flexibility and cardiovascular health.</p>
-                    <a href="#trial" class="text-blue-500 font-bold flex items-center gap-2 group-hover:gap-4 transition-all">ENROLL NOW <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <!-- PERSONAL TRAINING -->
-            <div class="program-card bg-zinc-900 rounded-2xl overflow-hidden group border border-zinc-800" data-aos="zoom-in" data-aos-delay="100">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500" alt="Personal Training">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Personal Training</h3>
-                    <p class="text-gray-400 text-sm mb-4">1-on-1 coaching with customized routines and strict form monitoring.</p>
-                    <a href="#trial" class="text-blue-500 font-bold flex items-center gap-2 group-hover:gap-4 transition-all">ENROLL NOW <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <!-- BODYBUILDING COMPETITION PREPRATION -->
-            <div class="program-card bg-zinc-900 rounded-2xl overflow-hidden group border border-zinc-800 md:col-span-2" data-aos="zoom-in" data-aos-delay="200">
-                <div class="h-56 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1532384748853-8f54a9f472e9?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transition duration-500" alt="Bodybuilding Prep">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Bodybuilding Competition Prep</h3>
-                    <p class="text-gray-400 text-sm mb-4">Elite level preparation including peak week planning, posing, and advanced nutrition for competitive athletes.</p>
-                    <a href="#trial" class="text-blue-500 font-bold flex items-center gap-2 group-hover:gap-4 transition-all">START PREP <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Why Choose Our Gym Section -->
+    <section id="why-choose" class="py-24 px-6 bg-black">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <!-- Left Side Content -->
+            <div class="lg:w-1/2" data-aos="fade-right">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 italic tracking-tighter">WHY CHOOSE <span class="text-blue-600">OUR GYM</span></h2>
+                <h3 class="text-2xl font-bold mb-4 text-white uppercase tracking-wide">Train with Certified Experts</h3>
+                <p class="text-gray-400 leading-relaxed mb-8 text-lg">
+                    "Our gym is powered by highly qualified and certified professionals from Skill India, REPS, and K11 Fitness Academy. We focus on delivering the best training experience with world-class equipment, personalized coaching, and a supportive environment. Whether you're a beginner or an advanced athlete, we help you achieve your fitness goals with expert guidance and proven methods."
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mb-10">
+                    <div class="why-point flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center text-blue-600">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <span class="font-semibold text-gray-200">Certified Trainers (Skill India, REPS, K11)</span>
+                    </div>
+                    <div class="why-point flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center text-blue-600">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <span class="font-semibold text-gray-200">Advanced & Modern Equipment</span>
+                    </div>
+                    <div class="why-point flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center text-blue-600">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <span class="font-semibold text-gray-200">Personal Training Programs</span>
+                    </div>
+                    <div class="why-point flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center text-blue-600">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <span class="font-semibold text-gray-200">Healthy Lifestyle Coaching</span>
+                    </div>
+                    <div class="why-point flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center text-blue-600">
+                            <i class="fas fa-virus-slash"></i>
+                        </div>
+                        <span class="font-semibold text-gray-200">Spacious & Hygienic Environment</span>
+                    </div>
+                    <div class="why-point flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center text-blue-600">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span class="font-semibold text-gray-200">Friendly and Motivating Atmosphere</span>
+                    </div>
+                </div>
+
+                <a href="#trial" class="btn-primary px-12 py-4 rounded-xl font-bold text-lg inline-block uppercase tracking-widest shadow-xl">Join Now</a>
+            </div>
+
+            <!-- Right Side Image -->
+            <div class="lg:w-1/2 w-full" data-aos="fade-left">
+                <div class="img-container rounded-3xl overflow-hidden group">
+                    <img src="Screenshot_20260414-215535-1.jpg" class="w-full h-auto object-cover transform transition duration-700 group-hover:scale-105" alt="Certified Gym Trainer">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 text-center">
+                        <p class="text-blue-600 font-black italic tracking-widest text-sm mb-1">PRO-LEVEL COACHING</p>
+                        <p class="text-white text-xl font-bold uppercase oswald">Naveen Sarvi - Head Coach</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BMI Calculator -->
     <section id="bmi" class="py-24 bg-zinc-950 px-6">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
             <div class="lg:w-1/2" data-aos="fade-right">
@@ -280,6 +337,7 @@
         </div>
     </section>
 
+    <!-- Transformations -->
     <section id="transformations" class="py-24 bg-zinc-900 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
@@ -287,13 +345,10 @@
                     <h2 class="text-4xl md:text-5xl font-bold">Real People, <span class="text-blue-600">Real Results</span></h2>
                     <p class="text-gray-400 mt-4">Actual 90-day transformations from our Gadag facility.</p>
                 </div>
-                <div class="text-center md:text-right" data-aos="fade-left">
-                    <p class="text-xl italic font-bold">Rated 4.9/5 by 113 members</p>
-                </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-zinc-800 p-2 rounded-xl" data-aos="fade-up">
-                    <img src="file_0000000046587208a1b336bfaddcef85.jpg" class="w-full h-80 object-cover rounded-lg mb-4" alt="Transformation 1" onerror="this.src='https://images.unsplash.com/photo-1548690312-e3b507d17a47?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="file_0000000046587208a1b336bfaddcef85.jpg" class="w-full h-80 object-cover rounded-lg mb-4" alt="Transformation 1">
                     <div class="p-4">
                         <p class="text-blue-500 font-bold uppercase text-xs mb-1">Muscle Build</p>
                         <h4 class="font-bold text-lg italic">"Lost 12kg & Gained Muscle!"</h4>
@@ -317,170 +372,118 @@
         </div>
     </section>
 
+    <!-- Pricing -->
     <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-bold mb-4">Membership <span class="text-blue-600">Plans</span></h2>
-            <p class="bg-blue-600/20 text-blue-500 inline-block px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-8">🔥 Flexible Options for Your Goals</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-zinc-900 p-8 rounded-2xl border border-zinc-800 transition hover:border-blue-600" data-aos="fade-up">
                 <h3 class="text-xl font-bold mb-2">Monthly</h3>
                 <div class="text-4xl font-extrabold mb-6">₹1,500<span class="text-sm font-normal text-gray-400">/mo</span></div>
-                <ul class="space-y-4 mb-8 text-gray-300 text-sm">
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Gym Floor Access</li>
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Locker Access</li>
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Cardio Section</li>
-                </ul>
-                <button onclick="bookPlan('Monthly Membership')" class="w-full border border-blue-600 py-3 rounded-lg font-bold hover:bg-blue-600 hover:text-black transition">JOIN NOW</button>
+                <button onclick="bookPlan('Monthly Membership')" class="w-full border border-blue-600 py-3 rounded-lg font-bold hover:bg-blue-600 hover:text-black transition uppercase">Join Now</button>
             </div>
             <div class="bg-zinc-900 p-8 rounded-2xl border border-zinc-800 transition hover:border-blue-600" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="text-xl font-bold mb-2">Quarterly</h3>
                 <div class="text-4xl font-extrabold mb-6">₹3,500<span class="text-sm font-normal text-gray-400">/3mo</span></div>
-                <ul class="space-y-4 mb-8 text-gray-300 text-sm">
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> All Monthly Benefits</li>
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Workout Chart</li>
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Progress Tracker</li>
-                </ul>
-                <button onclick="bookPlan('Quarterly Membership')" class="w-full border border-blue-600 py-3 rounded-lg font-bold hover:bg-blue-600 hover:text-black transition">JOIN NOW</button>
+                <button onclick="bookPlan('Quarterly Membership')" class="w-full border border-blue-600 py-3 rounded-lg font-bold hover:bg-blue-600 hover:text-black transition uppercase">Join Now</button>
             </div>
             <div class="bg-zinc-900 p-8 rounded-2xl border-2 border-blue-600 transform lg:scale-105 shadow-2xl relative" data-aos="fade-up" data-aos-delay="200">
                 <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-black text-xs font-bold px-4 py-1 rounded-full uppercase">Best Value</div>
                 <h3 class="text-xl font-bold mb-2">Half Yearly</h3>
                 <div class="text-4xl font-extrabold mb-6">₹7,000<span class="text-sm font-normal text-gray-400">/6mo</span></div>
-                <ul class="space-y-4 mb-8 text-gray-300 text-sm">
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> All Quarterly Benefits</li>
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Basic Diet Plan</li>
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Personal Assessment</li>
-                </ul>
-                <button onclick="bookPlan('Half Yearly Membership')" class="w-full btn-primary py-3 rounded-lg font-bold">JOIN NOW</button>
+                <button onclick="bookPlan('Half Yearly Membership')" class="w-full btn-primary py-3 rounded-lg font-bold uppercase">Join Now</button>
             </div>
             <div class="bg-zinc-900 p-8 rounded-2xl border border-zinc-800 transition hover:border-blue-600" data-aos="fade-up" data-aos-delay="300">
                 <h3 class="text-xl font-bold mb-2">Yearly</h3>
                 <div class="text-4xl font-extrabold mb-6">₹12,000<span class="text-sm font-normal text-gray-400">/yr</span></div>
-                <ul class="space-y-4 mb-8 text-gray-300 text-sm">
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> 12 Months Access</li>
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Full Diet Support</li>
-                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Free T-Shirt/Gear</li>
-                </ul>
-                <button onclick="bookPlan('Yearly Membership')" class="w-full border border-blue-600 py-3 rounded-lg font-bold hover:bg-blue-600 hover:text-black transition">JOIN NOW</button>
+                <button onclick="bookPlan('Yearly Membership')" class="w-full border border-blue-600 py-3 rounded-lg font-bold hover:bg-blue-600 hover:text-black transition uppercase">Join Now</button>
             </div>
         </div>
     </section>
 
+    <!-- Trial Section -->
     <section id="trial" class="py-24 px-6 bg-gradient-to-b from-black to-zinc-900">
         <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
                 <h2 class="text-4xl font-bold mb-6 italic">GET YOUR <span class="text-blue-600">FREE 1-DAY PASS</span> TODAY!</h2>
                 <p class="text-gray-400 mb-8 leading-relaxed">Start your transformation journey now. Fill out the form and we'll contact you instantly to schedule your first workout at Naveen's Max Fitness.</p>
-                <div class="space-y-6">
-                    <div class="flex items-center gap-4">
-                        <div class="bg-blue-600/10 p-4 rounded-full text-blue-600"><i class="fas fa-utensils text-xl"></i></div>
-                        <div><h4 class="font-bold">Free Diet Plan</h4><p class="text-sm text-gray-500">Beginners get a detailed nutritional chart.</p></div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="bg-blue-600/10 p-4 rounded-full text-blue-600"><i class="fas fa-dumbbell text-xl"></i></div>
-                        <div><h4 class="font-bold">Skilled Trainers</h4><p class="text-sm text-gray-500">Expert guidance for every movement.</p></div>
-                    </div>
-                </div>
             </div>
             <div class="bg-zinc-800 p-8 rounded-3xl shadow-2xl" data-aos="fade-left">
                 <h3 class="text-2xl font-bold mb-6 text-center">Claim Your Free Pass</h3>
                 <form id="leadForm" class="space-y-4">
-                    <div>
-                        <label class="block text-xs uppercase font-bold text-gray-500 mb-2">Full Name</label>
-                        <input type="text" id="userName" placeholder="Your Name" class="form-input" required>
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase font-bold text-gray-500 mb-2">Phone Number</label>
-                        <input type="tel" id="userPhone" placeholder="Mobile Number" class="form-input" required>
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase font-bold text-gray-500 mb-2">Your Fitness Goal</label>
-                        <select id="userGoal" class="form-input">
-                            <option>Weight Loss</option>
-                            <option>Muscle Gain</option>
-                            <option>Body Transformation</option>
-                            <option>Competition Prep</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="w-full btn-primary py-4 rounded-xl font-bold text-lg mt-4 shadow-lg">CONFIRM BOOKING</button>
-                    <p class="text-[10px] text-center text-gray-500 mt-4 italic">By clicking, you will be redirected to WhatsApp for instant confirmation.</p>
+                    <input type="text" id="userName" placeholder="Your Name" class="form-input" required>
+                    <input type="tel" id="userPhone" placeholder="Mobile Number" class="form-input" required>
+                    <select id="userReason" class="form-input" required>
+                        <option value="" disabled selected>Reason for joining?</option>
+                        <option value="Weight Loss">Weight Loss</option>
+                        <option value="Muscle Building">Muscle Building</option>
+                        <option value="General Fitness">General Fitness</option>
+                        <option value="Strength Training">Strength Training</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <button type="submit" class="w-full btn-primary py-4 rounded-xl font-bold text-lg mt-4 shadow-lg uppercase">Confirm Booking</button>
                 </form>
             </div>
         </div>
     </section>
 
+    <!-- Contact & Map -->
     <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div data-aos="fade-up">
-                <h2 class="text-4xl font-bold mb-8">Visit <span class="text-blue-600">The Lab</span></h2>
+                <h2 class="text-4xl font-bold mb-4">Visit <span class="text-blue-600">The Gym</span></h2>
+                
+                <!-- Gym Timing -->
+                <div class="bg-zinc-900/50 border border-blue-600/20 p-4 rounded-xl mb-6 flex items-start gap-4">
+                    <i class="fas fa-clock text-blue-600 mt-1 text-xl"></i>
+                    <div>
+                        <h4 class="text-white font-bold oswald uppercase tracking-wider mb-1">Gym Timings</h4>
+                        <p class="text-gray-300 text-sm">Morning: <span class="text-blue-500 font-bold">5:30 am to 10:00 am</span></p>
+                        <p class="text-gray-300 text-sm">Evening: <span class="text-blue-500 font-bold">4:30 pm to 10:00 pm</span></p>
+                    </div>
+                </div>
+
                 <div class="space-y-6 mb-8">
                     <div class="flex gap-4">
                         <i class="fas fa-map-marker-alt text-blue-600 text-xl mt-1"></i>
                         <p class="text-gray-300">Building, 2nd Floor, S. P, T Math Road, Above SBI Bank, Tanga Koot, Gadag-Betageri, Karnataka – 582101</p>
                     </div>
-                    <div class="flex gap-4">
-                        <i class="fas fa-phone-alt text-blue-600 text-xl mt-1"></i>
-                        <p class="text-gray-300 font-bold">088672 74396</p>
-                    </div>
-                    <div class="flex gap-4">
-                        <i class="fas fa-clock text-blue-600 text-xl mt-1"></i>
-                        <div>
-                            <p class="text-gray-300 font-bold uppercase text-xs mb-1">Morning Session</p>
-                            <p class="text-gray-300 mb-2">5:30 AM - 11:00 AM</p>
-                            <p class="text-gray-300 font-bold uppercase text-xs mb-1">Evening Session</p>
-                            <p class="text-gray-300 mb-2">4:30 PM - 10:00 PM</p>
-                            <p class="text-red-500 text-sm font-bold uppercase">Sunday Holiday</p>
-                        </div>
-                    </div>
                 </div>
-                <div class="relative rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl h-[350px] group">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.600645634563!2d75.6180556!3d15.425121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8f918e95079a3%3A0xf65922002347514a!2sNaveen's%20Max%20Fitness!5e0!3m2!1sen!2sin!4v1712415000000!5m2!1sen!2sin" 
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    <div class="absolute bottom-4 left-4 right-4 bg-zinc-900/90 backdrop-blur-md p-4 rounded-xl border border-white/10 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="flex items-center gap-3">
-                            <div class="bg-blue-600 p-2 rounded-lg"><i class="fas fa-map-marked-alt text-black"></i></div>
-                            <span class="text-xs font-bold uppercase">Open in Google Maps</span>
-                        </div>
-                        <a href="https://maps.app.goo.gl/v8iUZrEMoY9a8jkWA" target="_blank" class="btn-primary text-[10px] px-4 py-2 rounded-lg font-bold">GET DIRECTIONS</a>
-                    </div>
+                <div class="relative rounded-2xl overflow-hidden border border-zinc-800 h-[350px]">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.600645634563!2d75.6180556!3d15.425121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8f918e95079a3%3A0xf65922002347514a!2sNaveen's%20Max%20Fitness!5e0!3m2!1sen!2sin!4v1712415000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            
             <div class="flex flex-col justify-center items-center text-center p-10 bg-zinc-900 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
                 <div class="bg-blue-600 text-black p-4 rounded-full mb-6"><i class="fas fa-gift text-3xl"></i></div>
-                <h3 class="text-3xl font-bold mb-4">WANT A FREE DIET CHART?</h3>
-                <p class="text-gray-400 mb-8">Click below to message us on WhatsApp and we will send you a beginner-friendly diet plan immediately.</p>
-                <a href="https://wa.me/918867274396?text=Hi,%20I%20want%20the%20Free%20Diet%20Plan%20from%20Naveen's%20Max%20Fitness" class="btn-primary px-10 py-4 rounded-full font-bold flex items-center gap-3">
+                <h3 class="text-3xl font-bold mb-4 uppercase oswald">Free Diet Chart</h3>
+                <a href="https://wa.me/918867274396?text=Hi,%20I%20want%20the%20Free%20Diet%20Plan" class="btn-primary px-10 py-4 rounded-full font-bold flex items-center gap-3 mb-8">
                     <i class="fab fa-whatsapp text-xl"></i> GET FREE DIET PLAN
                 </a>
+                
+                <!-- Social Connect -->
+                <div class="pt-6 border-t border-zinc-800 w-full">
+                    <p class="text-gray-400 uppercase tracking-widest text-xs font-bold mb-4">Follow Our Head Coach</p>
+                    <div class="flex justify-center gap-6">
+                        <a href="https://www.instagram.com/naveens_fitness?igsh=MXByMHU5ODd1dTZhcw%3D%3D&utm_source=qr" target="_blank" class="social-icon text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1EX3fVRPc3/?mibextid=wwXIfr" target="_blank" class="social-icon text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://youtube.com/@naveensarvi8181?si=B2idiPQk1nNxxtPX" target="_blank" class="social-icon text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-black py-16 px-6 border-t border-zinc-800">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <div>
-                <div class="flex items-center gap-2 mb-4">
-                    <div class="bg-blue-600 text-black font-bold px-2 py-1 rounded text-xl italic">MAX</div>
-                    <span class="oswald text-xl font-bold tracking-widest">NAVEEN'S FITNESS</span>
-                </div>
-                <p class="text-gray-500 text-sm max-w-sm">Building elite physiques in Gadag-Betageri since inception. Join the community of serious fitness enthusiasts.</p>
-            </div>
-            <div class="flex gap-6 text-2xl">
-                <a href="https://www.instagram.com/naveens_fitness?igsh=MXByMHU5ODd1dTZhcw%3D%3D&utm_source=qr" target="_blank" class="text-gray-500 hover:text-blue-500 transition"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/share/1EX3fVRPc3/?mibextid=wwXIfr" target="_blank" class="text-gray-500 hover:text-blue-500 transition"><i class="fab fa-facebook"></i></a>
-                <a href="https://youtube.com/@naveensarvi8181?si=B2idiPQk1nNxxtPX" target="_blank" class="text-gray-500 hover:text-blue-500 transition"><i class="fab fa-youtube"></i></a>
-            </div>
+    <footer class="bg-black py-12 px-6 border-t border-zinc-800 text-center">
+        <div class="mb-6 flex items-center justify-center gap-2">
+            <div class="bg-blue-600 text-black font-bold px-2 py-1 rounded text-lg italic">MAX</div>
+            <span class="oswald text-lg font-bold tracking-widest">NAVEEN'S FITNESS</span>
         </div>
-        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-zinc-900 text-center text-gray-600 text-xs">
-            © 2024 Naveen's Max Fitness. All Rights Reserved. <br> Designed for High Conversions in Gadag, Karnataka.
-        </div>
+        <p class="text-gray-500 text-sm">© 2024 Naveen's Max Fitness. All Rights Reserved. <br> Gadag-Betageri, Karnataka.</p>
     </footer>
 
     <script>
-        AOS.init({ duration: 800, once: true, offset: 100 });
+        AOS.init({ duration: 800, once: true, offset: 50 });
 
         function calculateBMI() {
             const weight = parseFloat(document.getElementById('bmiWeight').value);
@@ -496,11 +499,11 @@
                 resultDiv.classList.remove('hidden');
                 let category = "";
                 let advice = "";
-                let color = "var(--primary)";
-                if (bmi < 18.5) { category = "UNDERWEIGHT"; advice = "Time to bulk up! Join our Strength program."; color = "#60a5fa"; }
-                else if (bmi <= 24.9) { category = "HEALTHY WEIGHT"; advice = "Great job! Join our HIIT program to stay fit."; color = "#22c55e"; }
-                else if (bmi <= 29.9) { category = "OVERWEIGHT"; advice = "Ready to shred? Our Cardio & HIIT plans are perfect."; color = "#eab308"; }
-                else { category = "OBESE"; advice = "Let's get healthy together. Start your transformation now!"; color = "#ef4444"; }
+                let color = "#00d2ff";
+                if (bmi < 18.5) { category = "UNDERWEIGHT"; advice = "Time to bulk up!"; color = "#60a5fa"; }
+                else if (bmi <= 24.9) { category = "HEALTHY"; advice = "Keep it up!"; color = "#22c55e"; }
+                else if (bmi <= 29.9) { category = "OVERWEIGHT"; advice = "Let's burn some fat."; color = "#eab308"; }
+                else { category = "OBESE"; advice = "Time for a transformation!"; color = "#ef4444"; }
                 categoryDiv.innerText = category;
                 categoryDiv.style.color = color;
                 adviceDiv.innerText = advice;
@@ -511,19 +514,13 @@
         const GYM_NUMBER = "918867274396";
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const text = `*New Lead from Website*%0A*Name:* ${document.getElementById('userName').value}%0A*Phone:* ${document.getElementById('userPhone').value}%0A*Goal:* ${document.getElementById('userGoal').value}`;
+            const text = `*New Lead from Website*%0A*Name:* ${document.getElementById('userName').value}%0A*Phone:* ${document.getElementById('userPhone').value}%0A*Reason for Joining:* ${document.getElementById('userReason').value}`;
             window.open(`https://wa.me/${GYM_NUMBER}?text=${text}`, '_blank');
         });
 
         function bookPlan(planName) {
-            window.open(`https://wa.me/${GYM_NUMBER}?text=${encodeURIComponent(`Hi, I am interested in the ${planName} at Naveen's Max Fitness.`)}`, '_blank');
+            window.open(`https://wa.me/${GYM_NUMBER}?text=${encodeURIComponent(`Hi, I am interested in the ${planName}`)}`, '_blank');
         }
-
-        window.onscroll = function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) { nav.classList.add('py-2'); nav.classList.remove('py-4'); }
-            else { nav.classList.add('py-4'); nav.classList.remove('py-2'); }
-        };
     </script>
 </body>
-</html>      
+</html>                 
